@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قندها</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body dir="rtl">
+<div id="app">
+  <header>
+    <h1>قند طبیعی یا مصنوعی؟</h1>
+    <button id="playBtn">شروع</button>
+    <div id="score">امتیاز: 0</div>
+  </header>
+  <main>
+    <div class="groups">
+      <div class="group">
+        <h2>قند طبیعی</h2>
+        <div class="dropzone" data-group="natural"></div>
+      </div>
+      <div class="group">
+        <h2>قند مصنوعی</h2>
+        <div class="dropzone" data-group="artificial"></div>
+      </div>
+    </div>
+    <section id="items" class="items"></section>
+  </main>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="sounds/bg_music.wav" type="audio/wav">
+</audio>
+<audio id="clickSnd">
+  <source src="sounds/click.wav" type="audio/wav">
+</audio>
+<script src="app.js"></script>
+</body>
+</html>
