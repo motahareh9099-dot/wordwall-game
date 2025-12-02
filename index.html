@@ -1,19 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>قندها</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بازی قندها</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body dir="rtl">
+
 <div id="app">
   <header>
     <h1>قند طبیعی یا مصنوعی؟</h1>
-    <button id="playBtn">شروع</button>
+    <button id="playBtn">شروع بازی</button>
     <div id="score">امتیاز: 0</div>
   </header>
-  <main>
+
+  <main style="background: url('https://i.ibb.co/3vJqG0J/blackboard.png') no-repeat center/cover; padding: 20px; border-radius: 20px;">
     <div class="groups">
       <div class="group">
         <h2>قند طبیعی</h2>
@@ -34,6 +36,7 @@
 <audio id="clickSnd">
   <source src="sounds/click.wav" type="audio/wav">
 </audio>
+
 <script src="app.js"></script>
 </body>
 </html>
