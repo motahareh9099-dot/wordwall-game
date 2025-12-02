@@ -1,8 +1,0 @@
-body{background:#222;color:#fff;font-family:sans-serif;margin:0}
-#app{max-width:900px;margin:auto;padding:16px}
-.groups{display:flex;gap:10px}
-.group{flex:1;background:#333;padding:10px;border-radius:10px}
-.dropzone{min-height:200px;border:2px dashed #555;padding:10px}
-.items{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.item{background:#444;padding:10px;border-radius:10px;cursor:grab;width:140px;text-align:center}
-.item img{width:100px;height:100px;object-fit:cover;border-radius:8px}
