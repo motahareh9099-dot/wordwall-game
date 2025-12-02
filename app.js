@@ -1,4 +1,3 @@
-// app.js
 const ITEMS = [
   {name: 'عسل', img: 'images/honey.jpg', group: 'natural'},
   {name: 'نارگیل', img: 'images/coconut.jpg', group: 'natural'},
@@ -11,6 +10,7 @@ const ITEMS = [
 ];
 
 let score = 0;
+let totalItems = ITEMS.length;
 
 function shuffle(array){
     for(let i = array.length - 1; i > 0; i--){
@@ -33,7 +33,8 @@ function renderItems(){
 
         div.addEventListener('dragstart', e => {
             e.dataTransfer.setData('text/plain', it.name);
-            document.getElementById('clickSnd').play();
+            const click = document.getElementById('clickSnd');
+            if(click) click.play().catch(()=>{});
         });
 
         box.appendChild(div);
@@ -57,9 +58,22 @@ function setupDrops(){
                 score--;
             }
             document.getElementById('score').textContent = 'امتیاز: ' + score;
-            document.getElementById('clickSnd').play();
+
+            const click = document.getElementById('clickSnd');
+            if(click) click.play().catch(()=>{});
+
+            checkEndGame();
         });
     });
+}
+
+function checkEndGame(){
+    const placedItems = document.querySelectorAll('.dropzone .item').length;
+    if(placedItems === totalItems){
+        setTimeout(()=>{
+            alert('بازی تمام شد! امتیاز نهایی: ' + score + '/' + totalItems);
+        }, 200);
+    }
 }
 
 document.getElementById('playBtn').onclick = () => {
@@ -67,5 +81,6 @@ document.getElementById('playBtn').onclick = () => {
     document.getElementById('score').textContent = 'امتیاز: 0';
     renderItems();
     setupDrops();
-    document.getElementById('bgMusic').play();
+    const bg = document.getElementById('bgMusic');
+    if(bg) bg.play().catch(()=>{});
 };
